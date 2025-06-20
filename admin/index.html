@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Manajemen Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Dashboard Admin</h1>
+            <h2>Manajemen Menu</h2>
+        </header>
+
+        <main>
+            <div class="form-container card">
+                <h3 id="form-title">Tambah Item Menu Baru</h3>
+                <form id="menu-form">
+                    <input type="hidden" id="menu-item-id">
+
+                    <div class="form-group">
+                        <label for="name">Nama Item</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Deskripsi</label>
+                        <textarea id="description" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Harga (Rp)</label>
+                        <input type="number" id="price" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select id="category" required>
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="appetizer">Appetizer</option>
+                            <option value="main_course">Main Course</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="beverage">Beverage</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="is_available">Status Ketersediaan</label>
+                        <select id="is_available">
+                            <option value="1">Tersedia</option>
+                            <option value="0">Habis</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" id="cancel-edit-btn" class="btn btn-secondary" style="display: none;">Batal</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container card">
+                <h3>Daftar Menu Saat Ini</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Harga</th>
+                            <th>Kategori</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="menu-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Meja - Restoran Okaeri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <img src="Logo.jpg" alt="Okaeri Logo" class="logo">
+            <h1>Selamat Datang di Restoran Okaeri</h1>
+            <p>Silakan lakukan reservasi meja Anda di bawah ini</p>
+        </header>
+
+        <div class="booking-form card">
+            <h3>Cari Meja Tersedia</h3>
+            <form id="availability-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="booking-date">Tanggal</label>
+                        <input type="date" id="booking-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-time">Jam</label>
+                        <input type="time" id="booking-time" required step="1800">
+                    </div>
+                    <div class="form-group">
+                        <label for="guest-count">Jumlah Tamu</label>
+                        <input type="number" id="guest-count" min="1" value="2" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Cek Ketersediaan</button>
+            </form>
+        </div>
+
+        <div id="table-layout-container" class="card" style="display: none;">
+            <h3>Pilih Meja Anda</h3>
+            <div class="legends">
+                <span class="legend-item"><span class="box available"></span> Tersedia</span>
+                <span class="legend-item"><span class="box unavailable"></span> Dipesan</span>
+                <span class="legend-item"><span class="box too-small"></span> Kurang Besar</span>
+            </div>
+            
+            <div id="table-layout">
+                </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
