@@ -113,9 +113,23 @@ const renderTableLayout = (tables, guestCount) => {
     }
 };
 
+// File: public/app.js (hanya bagian yang diubah)
+
+// ... (semua kode dari langkah sebelumnya tetap sama) ...
+
 // Fungsi untuk menangani saat meja dipilih
 const handleTableSelection = (tableId) => {
-    // Di langkah selanjutnya, kita akan proses booking dari sini
-    alert(`Anda memilih meja dengan ID: ${tableId}. Langkah selanjutnya adalah memilih menu.`);
-    // Contoh: window.location.href = `/menu-selection.html?table_id=${tableId}`;
+    // Ambil detail booking dari form
+    const bookingDetails = {
+        tableId: tableId,
+        date: document.getElementById('booking-date').value,
+        time: document.getElementById('booking-time').value,
+        guestCount: document.getElementById('guest-count').value
+    };
+
+    // Simpan di sessionStorage untuk digunakan di halaman berikutnya
+    sessionStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+
+    // Arahkan ke halaman order
+    window.location.href = 'order.html';
 };
